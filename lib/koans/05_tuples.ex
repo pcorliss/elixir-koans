@@ -24,8 +24,10 @@ defmodule Tuples do
     assert Tuple.insert_at({:a, "hi"}, 1, :new_thing) == ___
   end
 
-  koan "Add things at the end" do
-    assert Tuple.append({"Huey", "Dewey"}, "Louie") == ___
+  koan "Add things at the end (by constructing a new tuple)" do
+    {first, second} = {"Huey", "Dewey"}
+    extended = {first, second, "Louie"}
+    assert extended == ___
   end
 
   koan "Or remove them" do
